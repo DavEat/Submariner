@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SonarEffect : MonoBehaviour
 {
+    #region Vars
     [SerializeField] Transform _emitter = null;
 
     public Material Effect_Cave;
@@ -12,8 +13,7 @@ public class SonarEffect : MonoBehaviour
     bool _scanning;
     float _scanDistance;
     [SerializeField] float _maxScanDistance = 350;
-
-    Camera _camera;
+    #endregion
     void Start()
     {
         GameManager.sonarPing += Ping;

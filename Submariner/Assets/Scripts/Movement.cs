@@ -15,7 +15,8 @@ public class Movement : MonoBehaviour
     #region MonoFunctions
     protected virtual void Start()
     {
-        _transform = GetComponent<Transform>();
+        if (_transform == null)
+            _transform = GetComponent<Transform>();
         destination = _transform.position;
     }
     protected virtual void FixedUpdate()
@@ -26,7 +27,7 @@ public class Movement : MonoBehaviour
     #region Functions
     /// <summary>Move straight to destination with a little rotation to go in the good direction</summary>
     /// <returns>return true if the object is close enough from the destination</returns>
-    protected virtual bool MoveThrough()
+    protected virtual bool MoveThrough(float speedMul = 1)
     {
         Vector3 dir = destination - _transform.position;
 
@@ -52,7 +53,7 @@ public class Movement : MonoBehaviour
             }
 
             //move the object
-            transform.position += transform.forward * movSpeed * Time.fixedDeltaTime;
+            transform.position += transform.forward * movSpeed * speedMul  * Time.fixedDeltaTime;
         }
         return arrived;
     }

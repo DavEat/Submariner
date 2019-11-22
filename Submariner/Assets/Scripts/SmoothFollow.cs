@@ -5,9 +5,9 @@ using UnityEngine;
 public class SmoothFollow : MonoBehaviour
 {
     [SerializeField] Transform _target = null;
-    [SerializeField] float _speed = 1;
+    //[SerializeField] float _speed = 1;
     Transform _transform;
-    Vector3 velocity = Vector3.zero;
+    //Vector3 _velocity = Vector3.zero;
 
     void Start()
     {
@@ -17,6 +17,6 @@ public class SmoothFollow : MonoBehaviour
     void LateUpdate()
     {
         _transform.position = _target.position;
-        //_transform.position = Vector3.SmoothDamp(_transform.position, _target.position, ref velocity, _speed);
+        //_transform.position = Vector3.SmoothDamp(_transform.position, _target.position, ref _velocity, _speed);
     }
 }
