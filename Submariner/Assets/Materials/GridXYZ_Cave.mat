@@ -77,7 +77,7 @@ Material:
     - _RadiusIn: 2
     - _RadiusOut: 5
     - _RemoveDiag: 0
-    - _ScanDistance: 15.100826
+    - _ScanDistance: 19.281672
     - _ScanWidth: 10
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1

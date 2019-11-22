@@ -61,6 +61,8 @@ public class PlayerInput : MonoBehaviour
             //collision.collider.gameObject.SetActive(false);
             Destroy(collision.collider.gameObject, .7f);
 
+            SoundManager.inst.PlayImpact(0);
+
             GameManager.inst.SetLife(--_lifePoint);
             if (_dead)
                 Die();
@@ -70,6 +72,7 @@ public class PlayerInput : MonoBehaviour
             Debug.Log("lose wall");
             GameManager.inst.SetLife(_lifePoint = 0);
             Die();
+            SoundManager.inst.PlayImpact(1);
         }
     }
     void OnTriggerEnter(Collider other)
