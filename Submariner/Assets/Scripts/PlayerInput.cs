@@ -8,7 +8,9 @@ public class PlayerInput : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonUp(0))
+            _applyOn.destination = _applyOn.transform.position;
+        else if (Input.GetMouseButton(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -25,6 +27,13 @@ public class PlayerInput : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-
+        if (collision.collider.CompareTag("Monster"))
+        {
+            Debug.Log("lose shield");
+        }
+        else if (collision.collider.CompareTag("Wall"))
+        {
+            Debug.Log("lose wall");
+        }
     }
 }
