@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -20,8 +18,11 @@ public class PlayerInput : MonoBehaviour
                 _applyOn.destination = hit.point;
             }
         }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            GameManager.sonarPing(_applyOn.transform.position);
+        }
     }
-
     private void OnCollisionEnter(Collision collision)
     {
 

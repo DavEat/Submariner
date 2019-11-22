@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    #region Vars
     [SerializeField] float _movSpeed = 1;
     [SerializeField] float _movSpeedAttenuationByRot = .5f;
     [SerializeField] float _rotSpeed = 1;
@@ -11,22 +10,28 @@ public class Movement : MonoBehaviour
     [HideInInspector] public Vector3 destination;
     Vector3 _lastDir;
 
-    Transform _transform;
-
-    void Start()
+    protected Transform _transform;
+    #endregion
+    #region MonoFunctions
+    protected virtual void Start()
     {
         _transform = GetComponent<Transform>();
         destination = _transform.position;
     }
-
-    void Update()
+    protected virtual void FixedUpdate()
     {
+        MoveThrough();
     }
-
-    void FixedUpdate()
+    #endregion
+    #region Functions
+    /// <summary>Move straight to destination with a little rotation to go in the good direction</summary>
+    /// <returns>return true if the object is close enough from the destination</returns>
+    protected virtual bool MoveThrough()
     {
         Vector3 dir = destination - _transform.position;
-        if ((dir).sqrMagnitude > .2f)
+
+        bool arrived = (dir).sqrMagnitude < .2f;
+        if (!arrived)
         {
 
             Vector3 targetDir = destination - transform.position;
@@ -49,5 +54,7 @@ public class Movement : MonoBehaviour
             //move the object
             transform.position += transform.forward * movSpeed * Time.fixedDeltaTime;
         }
+        return arrived;
     }
+    #endregion
 }
