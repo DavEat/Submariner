@@ -68,7 +68,7 @@
 				else
 				{
 					c = fixed4(0, 0, 0, 0);
-					//o.Emission = -1;
+					o.Emission = 0;
 				}
 				//else
 				{
@@ -78,7 +78,7 @@
 					{
 						float grid = 1;
 
-						if (IN.worldPos.y - _WorldSpaceScannerPos.y < _FirstLineWidth * .5 && IN.worldPos.y - _WorldSpaceScannerPos.y > 0)
+						if (IN.worldPos.y - _WorldSpaceScannerPos.y < _FirstLineWidth && IN.worldPos.y - _WorldSpaceScannerPos.y > 0)
 							grid = 1;
 						else if (dst < _ScanDistance - _FirstLineWidth)
 						{

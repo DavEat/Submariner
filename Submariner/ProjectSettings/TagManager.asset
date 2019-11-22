@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Monster
+  - EndSection
   layers:
   - Default
   - TransparentFX

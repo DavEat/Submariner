@@ -61,7 +61,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _Emission: 1
-    - _FadeRadius: 0.1
+    - _FadeRadius: 0.2
     - _FirstLineWidth: 0.1
     - _GlossMapScale: 1
     - _Glossiness: 1
@@ -73,11 +73,11 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Radius: 1.5
+    - _Radius: 2.2
     - _RadiusIn: 2
     - _RadiusOut: 5
     - _RemoveDiag: 0
-    - _ScanDistance: 350.02173
+    - _ScanDistance: 15.100826
     - _ScanWidth: 10
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
